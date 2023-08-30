@@ -33,7 +33,7 @@ const listadematerias = new Listadematerias()
 alert("Bienvenido a la calculadora de Promedios")
 
 do {
-    let materia = prompt("Dinos cual es la primer materia que quieres sacar el promedio")
+    let materia = prompt("Dinos cual es la materia que quieres sacar el promedio")
     let nota1 = Number(prompt("ingrese su primer nota"))
     let nota2 = Number(prompt("ingrese su segunda nota"))
     let nota3 = Number(prompt("ingrese su tercer nota"))
