@@ -6,12 +6,9 @@ class Promedio {
         this.nota3 = nota3
     }
 
-    sacarpromedios() {
-        return (this.nota1 + this.nota2 + this.nota3) / 3
-    }
-
     descripcionmateria(){
-        return 'En la Materia'+this.materia+'tiene las siguientes notas:\n Primer nota: '+this.nota1+'\n Segunda nota: '+this.nota2+'\nTercer nota: '+this.nota3+'\n Con el promedio de: '+sacarpromedios()
+        let promedionotas = (this.nota1+this.nota2+this.nota3) /3
+        return `En la Materia ${this.materia} tiene las siguientes notas:\n Primer nota: ${this.nota1}\n Segunda nota: ${this.nota2}\n Tercer nota: ${this.nota3}\n Con el promedio de: ${promedionotas}`
     }
 }
 
@@ -27,9 +24,9 @@ class Listadematerias {
     mostrarmaterias() {
         let listadepromedios = ""
         this.listadematerias.forEach(materia => {
-            listadepromedios += listadepromedios + Promedio.descripcionmateria()
+            listadepromedios = listadepromedios + materia.descripcionmateria()+"\n"
         })
-        return listadepromedios
+        alert ( listadepromedios)
     }
 }
 const listadematerias = new Listadematerias()
@@ -40,12 +37,10 @@ do {
     let nota1 = Number(prompt("ingrese su primer nota"))
     let nota2 = Number(prompt("ingrese su segunda nota"))
     let nota3 = Number(prompt("ingrese su tercer nota"))
-
     const materias = new Promedio (materia, nota1, nota2, nota3)
     listadematerias.agregarmaterias(materias)
 
     continuar = confirm("¿Quiere sacar promedios de alguna otra materia?")
-    console.log(materias)
 } while (continuar);
 
 listadematerias.mostrarmaterias()
